@@ -1,0 +1,234 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+
+  background:
+    /* Círculo grande */
+    radial-gradient(
+      circle at 50% 50%,
+      transparent 0 70px,
+      rgba(255, 255, 255, 0.35) 71px 85px,
+      transparent 86px 280px,
+      rgba(0, 0, 0, 0.08) 281px 285px,
+      transparent 286px
+    ),
+
+    /* Línea negra/gris de separación */
+    linear-gradient(
+      to bottom,
+      transparent 0 49%,
+      rgba(0, 0, 0, 0.10) 49% 51%,
+      transparent 51%
+    ),
+
+    /* Rojo arriba / blanco abajo */
+    linear-gradient(
+      to bottom,
+      #e63946 0%,
+      #ef233c 49%,
+      #ffffff 49%,
+      #ffffff 100%
+    );
+}
+/* Contenedor principal */
+#root {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+/* Tarjeta del Pokémon */
+.card {
+  width: 380px;
+  border: none !important;
+  border-radius: 20px !important;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen */
+.pokemon-img {
+  width: 200px !important;
+  height: 200px !important;
+  object-fit: contain;
+  display: block;
+  margin: 20px auto 0;
+}
+
+/* Contenido */
+.card-body {
+  padding: 25px !important;
+  text-align: center;
+}
+
+/* Nombre */
+.card-title {
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #1e293b;
+  margin-top: 10px;
+}
+
+/* Información */
+.card-text {
+  font-size: 16px;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.types {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.type {
+  padding: 6px 14px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: 14px;
+}
+
+/* Tipos Pokémon */
+
+.type.normal {
+  background: #a8a77a;
+}
+
+.type.fire {
+  background: #ee8130;
+}
+
+.type.water {
+  background: #6390f0;
+}
+
+.type.electric {
+  background: #f7d02c;
+  color: #333;
+}
+
+.type.grass {
+  background: #7ac74c;
+}
+
+.type.ice {
+  background: #96d9d6;
+  color: #333;
+}
+
+.type.fighting {
+  background: #c22e28;
+}
+
+.type.poison {
+  background: #a33ea1;
+}
+
+.type.ground {
+  background: #e2bf65;
+  color: #333;
+}
+
+.type.flying {
+  background: #a98ff3;
+}
+
+.type.psychic {
+  background: #f95587;
+}
+
+.type.bug {
+  background: #a6b91a;
+}
+
+.type.rock {
+  background: #b6a136;
+}
+
+.type.ghost {
+  background: #735797;
+}
+
+.type.dragon {
+  background: #6f35fc;
+}
+
+.type.dark {
+  background: #705746;
+}
+
+.type.steel {
+  background: #b7b7ce;
+  color: #333;
+}
+
+.type.fairy {
+  background: #d685ad;
+}
+
+.abilities {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.abilities span {
+  background: #f1f5f9;
+  padding: 6px 14px;
+  border-radius: 12px;
+  color: #475569;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+/* Multitype - Arceus */
+.abilities span.multitype {
+  background: linear-gradient(
+    90deg,
+    #ef4444,
+    #f97316,
+    #facc15,
+    #22c55e,
+    #06b6d4,
+    #3b82f6,
+    #8b5cf6,
+    #ec4899
+  );
+
+  color: white;
+  font-weight: bold;
+
+  background-size: 200% 100%;
+  animation: rainbow 4s linear infinite;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 200% 50%;
+  }
+}
